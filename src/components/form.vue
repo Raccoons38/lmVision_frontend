@@ -156,9 +156,9 @@ export default {
 <style lang="scss">
 @import "@/assets/styles/variables.scss";
 .personalDataInvalid {
-  -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
-  -moz-box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
-  box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 0px 2px rgba(255, 0, 0, 1);
+  box-shadow: 0px 0px 0px 2px rgba(255, 0, 0, 1);
 }
 
 .form-right-personalData {
@@ -178,6 +178,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: auto;
+  gap: 15px;
 }
 .form {
   font-family: $unbounded-v;
@@ -200,7 +201,7 @@ export default {
       & input[type="text"],
       textarea {
         width: 90%;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         margin-right: 5%;
         padding: 10px;
         border: 1px solid rgba(244, 244, 244, 1);
@@ -219,6 +220,7 @@ export default {
         width: 95%;
         height: 210px;
         resize: none;
+        margin-top: 15px;
       }
     }
   }
