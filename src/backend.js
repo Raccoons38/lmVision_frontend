@@ -1,5 +1,9 @@
 require("dotenv").config();
 
+const path = require("path");
+const products = require(path.join(__dirname, "data", "products.json"));
+const services = require(path.join(__dirname, "data", "services.json"));
+
 const express = require("express");
 const app = express();
 
@@ -69,6 +73,14 @@ async function send_mail(data) {
       get_message(data.message), // html body
   });
 }
+
+app.get("/products", (req, res) => {
+  res.json(products);
+});
+
+app.get("/services", (req, res) => {
+  res.json(services);
+});
 
 app.post("/send_mail", (req, res) => {
   console.log("sending mail");

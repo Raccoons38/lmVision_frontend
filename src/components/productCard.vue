@@ -1,6 +1,6 @@
 <template>
   <div class="productCard">
-    <img src="@/assets/img/noimage.png" alt="product image" />
+    <img :src="getImageUrl(product.imgURL)" alt="product image" />
     <h3>{{ product.name }}</h3>
     <div class="productCard-description">
       <span>{{ product.price }} руб.</span>
@@ -44,6 +44,9 @@ export default {
       for (var i = 0, h = 0; i < s.length; i++)
         h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
       return h;
+    },
+    getImageUrl(imageName) {
+      return require(`@/assets/img/products/${imageName}`);
     },
   },
 };
