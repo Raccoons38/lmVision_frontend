@@ -25,37 +25,160 @@
       <div class="form-right col-sm-7 col-12">
         <h2>Напишите нам</h2>
         <div class="form-right-forms">
-          <form action="">
-            <div class="form-right-forms-left">
-              <input type="text" class="name" placeholder="Имя" />
+          <Form
+            ref="form"
+            :validation-schema="schema"
+            @submit="submit"
+            :initial-values="formData"
+          >
+            <div class="form-container">
+              <div class="form-column">
+                <custom-input
+                  placeholder="Имя"
+                  name="name"
+                  class="name"
+                  type="text"
+                />
+                <custom-input
+                  placeholder="Номер телефона"
+                  name="number"
+                  class="number"
+                  type="text"
+                  maxlength="12"
+                />
+              </div>
+              <div class="form-column">
+                <custom-input
+                  placeholder="E-mail"
+                  name="email"
+                  class="email"
+                  type="text"
+                />
+                <custom-input
+                  placeholder="Адрес"
+                  name="address"
+                  class="addres"
+                  type="text"
+                />
+              </div>
+            </div>
+            <textarea
+              type="text"
+              class="message"
+              placeholder="Ваше сообщение"
+              v-model="message"
+            ></textarea>
+
+            <button class="pinkButton" type="submit">Отправить</button>
+            <div class="form-right-personalData">
               <input
-                type="text"
-                class="number"
-                placeholder="Номер телефона"
-                maxlength="12"
+                type="checkbox"
+                :class="personalDataInvalid ? 'personalDataInvalid' : ''"
+                @click="changePersonalData"
               />
+              Я согласен с обработкой персональных данных
             </div>
-            <div class="form-right-forms-right">
-              <input type="text" class="email" placeholder="Email" />
-              <input type="text" class="addres" placeholder="Адрес" />
-            </div>
-            <textarea type="text" class="message" placeholder="Ваше сообщение"></textarea>
-          </form>
+          </Form>
         </div>
-        <div class="form-right-personalData">
-          <input type="checkbox" />
-          Я согласен с обработкой персональных данных
-        </div>
-        <button class="pinkButton">Отправить</button>
       </div>
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+import http from "@/http-common";
+import { useToast } from "vue-toastification";
+import CustomInput from "@/components/customInput.vue";
+import { Form } from "vee-validate";
+import * as yup from "yup";
+
+export default {
+  components: {
+    customInput: CustomInput,
+    Form: Form,
+  },
+  setup() {
+    const toast = useToast();
+    return { toast };
+  },
+  data() {
+    return {
+      schema: yup.object().shape({
+        name: yup.string().required("это поле обязательно"),
+        email: yup
+          .string()
+          .email("проверьте корректность адреса")
+          .required("это поле обязательно"),
+      }),
+      formData: {
+        name: "",
+        email: "",
+        address: "",
+        phone: "",
+      },
+      message: "",
+      personalDataInvalid: false,
+      personalDataHandlingAgreement: false,
+    };
+  },
+  computed: {},
+  methods: {
+    changePersonalData(event) {
+      this.personalDataInvalid = false;
+      this.personalDataHandlingAgreement = !this.personalDataHandlingAgreement;
+    },
+    submit(values) {
+      if (!this.personalDataHandlingAgreement) {
+        this.personalDataInvalid = true;
+        return;
+      }
+
+      this.formData = { ...values };
+      http.post("/send_mail", {
+        data: {
+          name: this.formData.name,
+          message: this.message,
+          phone: this.formData.phone,
+          address: this.formData.address,
+          email: this.formData.email,
+        },
+      });
+      this.toast.success("Мы получили ваше обращение!", {
+        timeout: 2000,
+      });
+      this.personalDataInvalid = false;
+    },
+  },
+  mounted() {},
+};
+</script>
 
 <style lang="scss">
 @import "@/assets/styles/variables.scss";
+.personalDataInvalid {
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
+  box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 1);
+}
+
+.form-right-personalData {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  input {
+    width: auto !important;
+    margin-right: 10px;
+  }
+}
+.form-container {
+  display: flex;
+  flex-direction: row;
+}
+.form-column {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
 .form {
   font-family: $unbounded-v;
   padding: 73px 0 40px 0;
@@ -74,9 +197,9 @@
       margin-bottom: 40px;
     }
     &-forms {
-      & input,
+      & input[type="text"],
       textarea {
-        width: 45%;
+        width: 90%;
         margin-bottom: 20px;
         margin-right: 5%;
         padding: 10px;
@@ -96,14 +219,6 @@
         width: 95%;
         height: 210px;
         resize: none;
-      }
-    }
-
-    &-personalData {
-      margin-bottom: 20px;
-
-      & input {
-        margin-right: 10px;
       }
     }
   }
