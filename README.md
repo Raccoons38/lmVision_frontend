@@ -1,24 +1,22 @@
-# frontend
+# LM Vision Monorepo
 
-## Project setup
-```
-npm install
-```
+## Запуск проекта:
 
-### Compiles and hot-reloads for development
+Фронтенд:
+
 ```
+npm i
 npm start
 ```
 
-### Compiles and minifies for production
+Параллельно в другом терминале запускай бэк:
+
 ```
-npm build
+node src/backend.js
 ```
 
-### Lints and fixes files
-```
-npm lint
-```
+Создай файл `.env` по примеру `.env.example`. Возьми бесплатный SMTP сервер, я брал https://www.mailersend.com/.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Добавляем продукты и услуги
+
+Файлы `src/data/products.json` и `src/data/services.json` не требует дополнительных пояснений. Указывать названия картинок (с расширением). Картинки класть в `src/assets/img/products`
