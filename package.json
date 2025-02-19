@@ -23,6 +23,7 @@
     "bootstrap-vue": "^2.23.1",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "lm_vision_solutions": "file:",
     "nodemailer": "^6.9.16",

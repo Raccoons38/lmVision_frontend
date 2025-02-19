@@ -3,7 +3,11 @@
     <div class="sideMenu col-sm-2">
       <div class="sideMenu-search">
         <img src="@/assets/img/search.svg" alt="" />
-        <input type="text" placeholder="Поиск" @input="search($event.target.value)" />
+        <input
+          type="text"
+          placeholder="Поиск"
+          @input="search($event.target.value)"
+        />
       </div>
       <a href="/cart"><h3>Корзина</h3></a>
       <h3 class="sideMenu-title">Камеры</h3>
@@ -30,24 +34,6 @@
         @click="filterProducts('комплектующие')"
       >
         <img src="@/assets/img/cart.svg" alt="" />Комплектующие
-      </div>
-
-      <h3 class="sideMenu-title">Услуги</h3>
-      <div
-        class="sideMenu-link"
-        id="montage"
-        :class="{ activeFilter: filter === 'монтаж' }"
-        @click="filterProducts('монтаж')"
-      >
-        <img src="@/assets/img/montage.svg" alt="" />Монтаж
-      </div>
-      <div
-        class="sideMenu-link"
-        id="repair"
-        :class="{ activeFilter: filter === 'ремонт' }"
-        @click="filterProducts('ремонт')"
-      >
-        <img src="@/assets/img/repair.svg" alt="" />Ремонт
       </div>
 
       <a href="/contacts"
@@ -94,17 +80,6 @@ export default {
         .get("/products")
         .then((response) => {
           this.products = response.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    getServices() {
-      http
-        .get("/services")
-        .then((response) => {
-          var services = response.data;
-          this.products.push(...services);
           this.filteredProducts.push(...this.products);
         })
         .catch((err) => {
@@ -176,7 +151,6 @@ export default {
   },
   mounted() {
     this.getProducts();
-    this.getServices();
     this.loadItemsFromLocalStorage();
   },
 };
