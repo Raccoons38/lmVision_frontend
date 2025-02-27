@@ -1,8 +1,17 @@
 require("dotenv").config();
 
+const https = require('https');
+const fs = require('fs');
+
+var privateKey  = fs.readFileSync('/etc/letsencrypt/live/irkcam.ru/privkey.pem', 'utf8');
+var certificate = fs.readFileSync('/etc/letsencrypt/live/irkcam.ru/cert.pem', 'utf8');
+
+var credentials = {key: privateKey, cert: certificate};
+
 const path = require("path");
 const products = require(path.join(__dirname, "data", "products.json"));
 const services = require(path.join(__dirname, "data", "services.json"));
+
 
 const express = require("express");
 const app = express();
@@ -11,9 +20,10 @@ const cors = require("cors");
 
 const PORT = process.env.PORT || 3001;
 
-const whitelist = ["http://localhost:3000"];
+const whitelist = ["http://localhost:3000", 'http://109.172.7.129:80', 'https://www.irkcam.ru', 'https://irkcam.ru', 'https://109.172.7.129:80', 'http://irkcam.ru'];
 const cors_options = {
   origin: (origin, callback) => {
+    console.log(origin)
     if (whitelist.includes(origin) || !origin) {
       callback(null, true);
     } else {
@@ -63,7 +73,7 @@ function get_message(message) {
 async function send_mail(data) {
   const info = await mailer.sendMail({
     from: `LM Cameras ${process.env.SMTP_USER}`, // sender address
-    to: "aleks.nekipelov78@gmail.com", // list of receivers
+    to: "lm-video@mail.ru", // list of receivers
     subject: `Новая заявка: ${data.email}`, // Subject line
     html:
       get_name(data.name) +
@@ -88,4 +98,7 @@ app.post("/send_mail", (req, res) => {
   send_mail(req.body.data);
 });
 
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+var httpsServer = https.createServer(credentials, app);
+
+httpsServer.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+// app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
