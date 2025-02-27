@@ -9,8 +9,9 @@
         </h1>
         <div class="row">
           <p class="col-sm-8">
-            Вместе с вами мы смотрим в одном направлении, обеспечивая ваше спокойствие и
-            безопасность. Ваша безопасность - наша единственная цель.
+            Вместе с вами мы смотрим в одном направлении, обеспечивая ваше
+            спокойствие и безопасность. Ваша безопасность - наша единственная
+            цель.
           </p>
         </div>
         <!-- <router-link :to="'/catalog'" class="pinkButton">Выбрать камеру</router-link> -->
@@ -66,21 +67,29 @@
     <div class="choose">
       <h2>Подберите то, что нужно<span class="pink">.</span></h2>
       <p class="col-md-8">
-        Мы гарантируем современные и качественные решения в видеонаблюдении для проектов
-        любого масштаба.
+        Мы гарантируем современные и качественные решения в видеонаблюдении для
+        проектов любого масштаба.
       </p>
       <div :class="isScrolled(950, null)" class="choose-cameras row gx-3">
         <div class="choose-cameras-frame col-3">
           <img src="@/assets/img/home.png" alt="home" />
         </div>
-        <div class="choose-cameras-frame col-3">
-          <img src="@/assets/img/outside.png" alt="outside" />
+        <div class="choose-cameras-frame col-3 rounded">
+          <img
+            src="@/assets/img/outdoor_cameras.png"
+            class="rounded"
+            alt="outside"
+          />
         </div>
         <div class="choose-cameras-frame col-3">
           <img src="@/assets/img/ofice.png" alt="ofice" />
         </div>
         <div class="choose-cameras-frame col-3">
-          <img src="@/assets/img/manufacture.png" alt="manufacture" />
+          <img
+            src="@/assets/img/facility_cameras.png"
+            class="rounded"
+            alt="manufacture"
+          />
         </div>
       </div>
       <div class="choose-slider">
@@ -88,7 +97,11 @@
           <img src="@/assets/img/home.png" alt="home" class="slide" />
           <img src="@/assets/img/outside.png" alt="outside" class="slide" />
           <img src="@/assets/img/ofice.png" alt="ofice" class="slide" />
-          <img src="@/assets/img/manufacture.png" alt="manufacture" class="slide" />
+          <img
+            src="@/assets/img/manufacture.png"
+            alt="manufacture"
+            class="slide"
+          />
         </div>
       </div>
     </div>
@@ -96,17 +109,20 @@
   <div class="about">
     <div class="container">
       <div class="about-content">
-        <img src="@/assets/img/about.png" alt="we" class="about-content-image" />
+        <img
+          src="@/assets/img/about.png"
+          alt="we"
+          class="about-content-image"
+        />
         <div class="about-content-text">
-          <h2 :class="isScrolled(1500, 3000)">Кто мы<span class="pink">?</span></h2>
+          <h2 :class="isScrolled(1500, 3000)">
+            Кто мы<span class="pink">?</span>
+          </h2>
           <p>
-            На протяжении 10 лет мы удерживаем лидерство на рынке видеонаблюдения,
-            предлагая передовые технологии для максимального комфорта клиентов.
+            Наша профессиональная команда разрабатывает индивидуальные проекты
+            любого масштаба, обеспечивая надежность и инновации, стремясь
+            создать безопасное и технологически продвинутое будущее.
             <br />
-            <br />
-            Наша профессиональная команда разрабатывает индивидуальные проекты любого
-            масштаба, обеспечивая надежность и инновации, стремясь создать безопасное и
-            технологически продвинутое будущее.
           </p>
           <!-- <router-link :to="'/about'" class="about-content-text-link">
             Читать далее &nbsp;<i
@@ -141,18 +157,21 @@
   </div>
   <div class="container">
     <div class="experience row">
-      <div :class="isScrolled(2500, 4700)" class="experience-left col-sm-8 col-12">
+      <div
+        :class="isScrolled(2500, 4700)"
+        class="experience-left col-sm-8 col-12"
+      >
         <div class="experience-left-card clients">
-          <span class="experience-left-card-num">84</span>
+          <span class="experience-left-card-num">50</span>
           <br />
           <div class="experience-left-card-text">
             <span class="experience-left-card-text-line"></span>
-            <span class="experience-left-card-text-word">Клиента</span>
+            <span class="experience-left-card-text-word">Клиентов</span>
           </div>
           <img src="@/assets/img/clients.png" alt="clients" />
         </div>
         <div class="experience-left-card projects">
-          <span class="experience-left-card-num">50</span>
+          <span class="experience-left-card-num">50+</span>
           <br />
           <div class="experience-left-card-text">
             <span class="experience-left-card-text-line"></span>
@@ -168,12 +187,14 @@
           <br />
           <div class="experience-left-card-text">
             <span class="experience-left-card-text-line"></span>
-            <span class="experience-left-card-text-word">Премий</span>
+            <span class="experience-left-card-text-word"
+              >Клиентов осталось у нас</span
+            >
           </div>
           <img src="@/assets/img/awards.png" alt="awards" />
         </div>
         <div class="experience-left-card years">
-          <span class="experience-left-card-num">10</span>
+          <span class="experience-left-card-num">18</span>
           <br />
           <div class="experience-left-card-text">
             <span class="experience-left-card-text-line"></span>
@@ -190,7 +211,7 @@
           >
           работы
         </h1>
-        <p>Мы там то, мы там сё, жыли были, тили тили трали вали</p>
+        <p>Опыт, проверенный временем и доверием наших клиентов.</p>
         <!-- <router-link :to="'/contacts'" class="pinkButton">Оставить заявку</router-link> -->
         <a :href="'/contacts'" class="pinkButton"> Оставить заявку</a>
       </div>
@@ -220,14 +241,20 @@
           :modules="modules"
           class="mySwiper"
         >
-          <swiper-slide v-for="(page, pageIndex) in paginatedProducts" :key="pageIndex">
+          <swiper-slide
+            v-for="(page, pageIndex) in paginatedProducts"
+            :key="pageIndex"
+          >
             <div class="catalog-slider-grid row px-3 py-3">
               <div
                 class="catalog-slider-grid-item col-12 col-md-4 mb-4"
                 v-for="(catalogItem, index) in page"
                 :key="index"
               >
-                <img src="@/assets/img/noimage.png" :alt="catalogItem.name" />
+                <img
+                  :src="getImageUrl(catalogItem.imgURL)"
+                  :alt="catalogItem.name"
+                />
                 <h3 class="catalog-slider-item-name">{{ catalogItem.name }}</h3>
                 <p class="catalog-slider-item-description">
                   {{ catalogItem["description"] }}
@@ -248,7 +275,10 @@
             :key="index"
           >
             <div class="catalog-slider-grid-item">
-              <img src="@/assets/img/noimage.png" :alt="catalogItem.name" />
+              <img
+                :src="getImageUrl(catalogItem.imgURL)"
+                :alt="catalogItem.name"
+              />
               <h3 class="catalog-slider-item-name">{{ catalogItem.name }}</h3>
               <p class="catalog-slider-item-description">
                 {{ catalogItem["description"] }}
@@ -259,11 +289,13 @@
       </div>
     </div>
   </div>
-  <div class="seeOnline">
+  <div class="seeOnline d-none">
     <div class="container">
       <div class="seeOnline-row row">
         <div class="seeOnline-row-leftMobile col-sm-3 col-12">
-          <h2>Проверьте, как камера работает онлайн<span class="pink">˙</span></h2>
+          <h2>
+            Проверьте, как камера работает онлайн<span class="pink">˙</span>
+          </h2>
           <div class="content">
             <img src="@/assets/img/see.png" alt="product" />
             <div class="seeOnline-row-leftMobile-product">
@@ -273,7 +305,9 @@
           </div>
         </div>
         <div class="seeOnline-row-left col-sm-3 col-12">
-          <h2>Проверьте, как камера работает онлайн<span class="pink">˙</span></h2>
+          <h2>
+            Проверьте, как камера работает онлайн<span class="pink">˙</span>
+          </h2>
           <div class="seeOnline-row-left-product">
             <h3>Название камеры</h3>
             <p>технические данные и другая нужная инфа</p>
@@ -323,14 +357,7 @@ export default {
   },
   data() {
     return {
-      filters: [
-        { name: "", text: "Все" },
-        { name: "для дома", text: "Для дома" },
-        { name: "наружные", text: "Наружные" },
-        { name: "комплектующие", text: "Комплектующие" },
-        { name: "монтаж", text: "Монтаж" },
-        { name: "ремонт", text: "Ремонт" },
-      ],
+      filters: [],
       catalog: [],
       filteredProducts: [],
       itemsPerPage: 6,
@@ -354,7 +381,11 @@ export default {
   computed: {
     paginatedProducts() {
       const pages = [];
-      for (let i = 0; i < this.filteredProducts.length; i += this.itemsPerPage) {
+      for (
+        let i = 0;
+        i < this.filteredProducts.length;
+        i += this.itemsPerPage
+      ) {
         pages.push(this.filteredProducts.slice(i, i + this.itemsPerPage));
       }
       return pages;
@@ -366,17 +397,6 @@ export default {
         .get("/products")
         .then((response) => {
           this.catalog = response.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    getServices() {
-      http
-        .get("/services")
-        .then((response) => {
-          var services = response.data;
-          this.catalog.push(...services);
           this.filteredProducts.push(...this.catalog);
         })
         .catch((err) => {
@@ -401,11 +421,15 @@ export default {
         return { animated: true };
       }
 
-      var isAnimate = this.scrollY > (window.innerWidth >= 768 ? desktop : mobile);
+      var isAnimate =
+        this.scrollY > (window.innerWidth >= 768 ? desktop : mobile);
       if (isAnimate) {
         this.scrolls.add(desktop);
       }
       return { animated: isAnimate };
+    },
+    getImageUrl(imageName) {
+      return require(`@/assets/img/products/${imageName}`);
     },
   },
   created() {
@@ -440,7 +464,6 @@ export default {
     document.querySelectorAll(".swiper-pagination")[1].append(mobileCatalog);
 
     this.getProducts();
-    this.getServices();
   },
 };
 </script>

@@ -2,10 +2,6 @@
   <div class="container">
     <div class="form row">
       <div class="form-left col-sm-3 col-12">
-        <div class="form-left-ofice">
-          <h2>Наш офис</h2>
-          <p>Avenida Marta Lopes, Nº2 8400-401 Vila Real, Portugal</p>
-        </div>
         <div class="form-left-hours">
           <h2>Часы работы</h2>
           <p>
@@ -17,7 +13,7 @@
           <h2>Наши контакты</h2>
           <p>
             Тел: +7914-899-13-95 <br />
-            Email: lm_video@gmail.com
+            Email: lm-video@mail.ru
           </p>
         </div>
       </div>
