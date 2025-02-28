@@ -95,10 +95,14 @@
       <div class="choose-slider">
         <div class="choose-slider-container">
           <img src="@/assets/img/home.png" alt="home" class="slide" />
-          <img src="@/assets/img/outside.png" alt="outside" class="slide" />
+          <img
+            src="@/assets/img/outdoor_cameras.png"
+            alt="outside"
+            class="slide"
+          />
           <img src="@/assets/img/ofice.png" alt="ofice" class="slide" />
           <img
-            src="@/assets/img/manufacture.png"
+            src="@/assets/img/facility_cameras.png"
             alt="manufacture"
             class="slide"
           />
@@ -110,7 +114,7 @@
     <div class="container">
       <div class="about-content">
         <img
-          src="@/assets/img/about.png"
+          src="@/assets/img/about_us.png"
           alt="we"
           class="about-content-image"
         />
