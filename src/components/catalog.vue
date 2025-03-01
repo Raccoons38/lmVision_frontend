@@ -14,26 +14,26 @@
       <div
         class="sideMenu-link"
         id="forHome"
-        :class="{ activeFilter: filter === 'для дома' }"
-        @click="filterProducts('для дома')"
+        :class="{ activeFilter: filter === 'ip' }"
+        @click="filterProducts('ip')"
       >
-        <img src="@/assets/img/ipCamera.svg" alt="" /> Для дома
+        <img src="@/assets/img/ipCamera.svg" alt="" /> IP камеры
       </div>
       <div
         class="sideMenu-link"
         id="outside"
-        :class="{ activeFilter: filter === 'наружные' }"
-        @click="filterProducts('наружные')"
+        :class="{ activeFilter: filter === 'fullcolor' }"
+        @click="filterProducts('fullcolor')"
       >
-        <img src="@/assets/img/camera.svg" alt="" />Наружные
+        <img src="@/assets/img/camera.svg" alt="" />Full color камеры
       </div>
       <div
         class="sideMenu-link"
         id="complect"
-        :class="{ activeFilter: filter === 'комплектующие' }"
-        @click="filterProducts('комплектующие')"
+        :class="{ activeFilter: filter === 'intercom' }"
+        @click="filterProducts('intercom')"
       >
-        <img src="@/assets/img/cart.svg" alt="" />Комплектующие
+        <img src="@/assets/img/lucide-lab_intercom.png" alt="" />Видеодомофоны
       </div>
 
       <a href="/contacts"

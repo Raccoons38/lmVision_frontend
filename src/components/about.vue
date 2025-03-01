@@ -5,9 +5,9 @@
         <h1>О нас<span class="pink point">.</span></h1>
       </div>
       <div class="head-text row">
-        <p class="col-sm-7 col-12">
-          Познакомьтесь с LM Vision и нашим подходом к безопасности, надежности и
-          передовым технологиям в видеонаблюдении.
+        <p class="col-sm-10 col-12">
+          Познакомьтесь с LM Vision и нашим подходом к безопасности, надежности
+          и передовым технологиям в видеонаблюдении.
         </p>
       </div>
     </div>
@@ -16,7 +16,10 @@
     <div class="oneDirection">
       <div class="oneDirection-title row">
         <h2 :class="isScrolled(0, 0)" class="col-sm-9 col-12">
-          Мы смотрим в одном направлении с нашими клиентами<span class="pink">.</span>
+          Мы смотрим в одном направлении с нашими клиентами<span
+            class="pink point"
+            >.</span
+          >
         </h2>
       </div>
       <div class="oneDirection-example row">
@@ -24,30 +27,35 @@
           class="oneDirection-example-text col-sm-5 col-12"
           :class="isScrolled(500, 400)"
         >
-          Установка камеры в чатном доме
+          Установка камеры в частном доме
           <br />
           Иркутск. 2023
         </div>
         <div class="oneDirection-example-image col-sm-7 col-12">
           <img
-            src="../assets/img/oneDirection.png"
+            src="../assets/img/camera_install.png"
             :class="isScrolled(500, 200)"
             alt="montage"
           />
         </div>
       </div>
       <div class="oneDirection-text row">
-        <div class="col-sm-10 col-12" :class="isScrolled(850, 700)">
+        <div
+          class="col-sm-10 col-12"
+          style="font-size: 18px"
+          :class="isScrolled(850, 700)"
+        >
           <p>
-            В <span class="pink">LM Video</span> мы уверены, что безопасность и комфорт
-            клиентов — наш приоритет. Мы постоянно ищем инновационные решения в
-            видеонаблюдении для создания защищенного будущего.
+            В <span class="pink">LM Video</span> мы уверены, что безопасность и
+            комфорт клиентов — наш приоритет. Мы постоянно ищем инновационные
+            решения в видеонаблюдении для создания защищенного будущего.
           </p>
           <p>
-            Стремление к инновациям побуждает нас исследовать новые направления и
-            совершенствовать процессы, чтобы предлагать передовые результаты. Мы
-            гарантируем максимальный комфорт и уверенность в безопасности. Присоединяйтесь
-            к нам для совместного движения к более безопасному и комфортному миру.
+            Стремление к инновациям побуждает нас исследовать новые направления
+            и совершенствовать процессы, чтобы предлагать передовые результаты.
+            Мы гарантируем максимальный комфорт и уверенность в безопасности.
+            Присоединяйтесь к нам для совместного движения к более безопасному и
+            комфортному миру.
           </p>
         </div>
       </div>
@@ -74,20 +82,20 @@
       </div>
       <div class="security-right col-sm-8 col-12">
         <p>
-          В <span class="pink">LM Video</span> безопасность и комфорт клиентов — наш
-          приоритет. Мы предлагаем передовые решения для видеонаблюдения и полный спектр
-          услуг, включая профессиональную установку и поддержку. Наши эксперты
-          индивидуально работают с каждым клиентом, чтобы понять их уникальные потребности
-          и предложить оптимальные решения.
+          В <span class="pink">LM Video</span> безопасность и комфорт клиентов —
+          наш приоритет. Мы предлагаем передовые решения для видеонаблюдения и
+          полный спектр услуг, включая профессиональную установку и поддержку.
+          Мы индивидуально работаем с каждым клиентом, чтобы понять их
+          уникальные потребности и предложить оптимальные решения.
           <br />
           <br />
-          Мы обеспечиваем простой и удобный процесс установки, минимизируя неудобства.
-          <span class="pink">Наша цель</span> — дарить уверенность и спокойствие, зная,
-          что безопасность клиентов в надежных руках.
+          Обеспечиваем простой и удобный процесс установки, минимизируя
+          неудобства. <span class="pink">Наша цель</span> — дарить уверенность и
+          спокойствие, зная, что безопасность клиентов в надежных руках.
         </p>
       </div>
     </div>
-    <div class="usage">
+    <!-- <div class="usage">
       <div class="usage-example row">
         <div class="usage-example-image col-sm-8 col-12">
           <img
@@ -96,26 +104,35 @@
             :class="isScrolled(2400, 2000)"
           />
         </div>
-        <div class="usage-example-text col-sm-4 col-12" :class="isScrolled(2400, 2200)">
+        <div
+          class="usage-example-text col-sm-4 col-12"
+          :class="isScrolled(2400, 2200)"
+        >
           Принцип работы камеры на WiFi
         </div>
       </div>
       <div class="usage-text">
         <p class="col-sm-11 col-12">
-          Наши системы видеонаблюдения просты в установке и не требуют дорогостоящих
-          материалов, что делает процесс быстрым и экономичным. Пользование нашими
-          камерами также предельно простое и интуитивно понятное, что позволяет клиентам
-          легко управлять и контролировать свои системы безопасности. Наша цель - создать
-          для клиентов ощущение уверенности и спокойствия, зная, что их безопасность
-          находится в надежных руках, без лишних сложностей и затрат.
+          Наши системы видеонаблюдения просты в установке и не требуют
+          дорогостоящих материалов, что делает процесс быстрым и экономичным.
+          Пользование нашими камерами также предельно простое и интуитивно
+          понятное, что позволяет клиентам легко управлять и контролировать свои
+          системы безопасности. Наша цель - создать для клиентов ощущение
+          уверенности и спокойствия, зная, что их безопасность находится в
+          надежных руках, без лишних сложностей и затрат.
         </p>
       </div>
-    </div>
+    </div> -->
   </div>
+  <customForm></customForm>
 </template>
 
 <script>
+import Form from "./form";
 export default {
+  components: {
+    customForm: Form,
+  },
   data() {
     return {
       scrollY: 0,
@@ -132,7 +149,8 @@ export default {
         return { animated: true };
       }
 
-      var isAnimate = this.scrollY > (window.innerWidth >= 768 ? desktop : mobile);
+      var isAnimate =
+        this.scrollY > (window.innerWidth >= 768 ? desktop : mobile);
       if (isAnimate) {
         this.scrolls.add(desktop);
       }
@@ -169,23 +187,28 @@ h2 {
   flex-direction: column;
   justify-content: end;
   height: 640px;
-  padding: 64px 100px;
+  padding: 64px 10px;
+  margin-inline: 100px;
+  margin-top: 100px;
   margin-bottom: 50px;
+  border-radius: 35px;
 
-  background: linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(56, 99, 165, 1) 100%);
+  background: linear-gradient(#7097d3 0%, #3a4e6d 100%);
 
   &-title {
     margin-bottom: 48px;
+    margin-inline: 0px;
 
     & h1 {
-      font-size: 64px !important;
+      font-size: 96px !important;
       font-weight: 400;
       color: rgba(244, 244, 244, 1);
     }
   }
   &-text {
     & p {
-      font-size: 20px;
+      font-size: 36px;
+      line-height: normal;
       font-weight: 300;
       color: rgba(244, 244, 244, 1);
     }
@@ -194,6 +217,7 @@ h2 {
 
 @media (max-width: 768px) {
   .head {
+    margin-inline: 10px;
     h1 {
       font-size: 48px !important;
     }

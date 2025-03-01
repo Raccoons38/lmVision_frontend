@@ -4,26 +4,20 @@
     <div class="mainBlock row">
       <div class="mainBlock-text col-md-6 col-12">
         <h1>
-          <span class="pink">LM</span> Video <br />
-          Solutions<span class="pink point">.</span>
+          <span class="pink">LM</span> Video<span class="pink point">.</span>
         </h1>
         <div class="row">
           <p class="col-sm-8">
-            Вместе с вами мы смотрим в одном направлении, обеспечивая ваше
-            спокойствие и безопасность. Ваша безопасность - наша единственная
-            цель.
+            Технологии, которые работают на Вас и Вашу безопасность.
           </p>
         </div>
         <!-- <router-link :to="'/catalog'" class="pinkButton">Выбрать камеру</router-link> -->
-        <a :href="'/catalog'" class="pinkButton"> Выбрать камеру</a>
-      </div>
-      <div class="mainBlock-mobileImg">
-        <img src="@/assets/img/mobileMainCamera.png" alt="main camera" />
+        <a :href="'/catalog'" class="pinkButton"> В каталог →</a>
       </div>
     </div>
   </div>
   <div class="background">
-    <img src="@/assets/img/mainCamera.png" alt="home page" />
+    <img src="@/assets/img/title_hero_image.png" alt="home page" />
   </div>
   <div class="container">
     <div class="reputation">
@@ -66,9 +60,10 @@
     </div>
     <div class="choose">
       <h2>Подберите то, что нужно<span class="pink">.</span></h2>
-      <p class="col-md-8">
-        Мы гарантируем современные и качественные решения в видеонаблюдении для
-        проектов любого масштаба.
+      <p class="col-md-12 lead" style="font-size: 24px">
+        Мы работаем как с частными клиентами, обеспечивая установку камер для
+        личного пользования, так и с юридическими лицами, реализующими крупные
+        системы видеонаблюдения для объектов различного типа
       </p>
       <div :class="isScrolled(950, null)" class="choose-cameras row gx-3">
         <div class="choose-cameras-frame col-3">
@@ -107,117 +102,6 @@
             class="slide"
           />
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="about">
-    <div class="container">
-      <div class="about-content">
-        <img
-          src="@/assets/img/about_us.png"
-          alt="we"
-          class="about-content-image"
-        />
-        <div class="about-content-text">
-          <h2 :class="isScrolled(1500, 3000)">
-            Кто мы<span class="pink">?</span>
-          </h2>
-          <p>
-            Наша профессиональная команда разрабатывает индивидуальные проекты
-            любого масштаба, обеспечивая надежность и инновации, стремясь
-            создать безопасное и технологически продвинутое будущее.
-            <br />
-          </p>
-          <!-- <router-link :to="'/about'" class="about-content-text-link">
-            Читать далее &nbsp;<i
-              :class="isScrolled(1900, 3900)"
-              class="fa-solid fa-arrow-right arrow"
-            ></i>
-          </router-link> -->
-          <a :href="'/about'" class="about-content-text-link">
-            Читать далее &nbsp;<i
-              :class="isScrolled(1900, 3900)"
-              class="fa-solid fa-arrow-right arrow"
-            ></i
-          ></a>
-
-          <!-- <router-link
-            :class="isScrolled(1900, 3900)"
-            :to="'/portfolio'"
-            class="about-content-text-button"
-          >
-            портфолио
-          </router-link> -->
-          <a
-            :href="'/portfolio'"
-            class="about-content-text-button"
-            :class="isScrolled(1900, 3900)"
-          >
-            портфолио</a
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="experience row">
-      <div
-        :class="isScrolled(2500, 4700)"
-        class="experience-left col-sm-8 col-12"
-      >
-        <div class="experience-left-card clients">
-          <span class="experience-left-card-num">50</span>
-          <br />
-          <div class="experience-left-card-text">
-            <span class="experience-left-card-text-line"></span>
-            <span class="experience-left-card-text-word">Клиентов</span>
-          </div>
-          <img src="@/assets/img/clients.png" alt="clients" />
-        </div>
-        <div class="experience-left-card projects">
-          <span class="experience-left-card-num">50+</span>
-          <br />
-          <div class="experience-left-card-text">
-            <span class="experience-left-card-text-line"></span>
-            <span class="experience-left-card-text-word"
-              >Проектов<br />
-              выполнено</span
-            >
-          </div>
-          <img src="@/assets/img/projects.png" alt="projects" />
-        </div>
-        <div class="experience-left-card awards">
-          <span class="experience-left-card-num">37</span>
-          <br />
-          <div class="experience-left-card-text">
-            <span class="experience-left-card-text-line"></span>
-            <span class="experience-left-card-text-word"
-              >Клиентов осталось у нас</span
-            >
-          </div>
-          <img src="@/assets/img/awards.png" alt="awards" />
-        </div>
-        <div class="experience-left-card years">
-          <span class="experience-left-card-num">18</span>
-          <br />
-          <div class="experience-left-card-text">
-            <span class="experience-left-card-text-line"></span>
-            <span class="experience-left-card-text-word">Лет на рынке</span>
-          </div>
-          <img src="@/assets/img/years.png" alt="years" />
-        </div>
-      </div>
-      <div class="experience-right col-sm-4 col-12">
-        <h1>
-          Более
-          <span :class="isScrolled(2500, 4300)" class="experience-right-pink"
-            >10 лет</span
-          >
-          работы
-        </h1>
-        <p>Опыт, проверенный временем и доверием наших клиентов.</p>
-        <!-- <router-link :to="'/contacts'" class="pinkButton">Оставить заявку</router-link> -->
-        <a :href="'/contacts'" class="pinkButton"> Оставить заявку</a>
       </div>
     </div>
   </div>
@@ -290,6 +174,110 @@
             </div>
           </swiper-slide>
         </swiper>
+      </div>
+    </div>
+  </div>
+  <div class="about">
+    <div class="container">
+      <div class="about-content">
+        <img
+          src="@/assets/img/about_us.png"
+          alt="we"
+          class="about-content-image"
+        />
+        <div class="about-content-text">
+          <h2 :class="isScrolled(1500, 3000)">
+            Кто мы<span class="pink">?</span>
+          </h2>
+          <p>
+            Наша профессиональная команда разрабатывает индивидуальные проекты
+            любого масштаба, обеспечивая надежность и инновации, стремясь
+            создать безопасное и технологически продвинутое будущее.
+            <br />
+          </p>
+          <!-- <router-link :to="'/about'" class="about-content-text-link">
+            Читать далее &nbsp;<i
+              :class="isScrolled(1900, 3900)"
+              class="fa-solid fa-arrow-right arrow"
+            ></i>
+          </router-link> -->
+          <a :href="'/about'" class="about-content-text-link">
+            Читать далее &nbsp;<i
+              :class="isScrolled(1900, 3900)"
+              class="fa-solid fa-arrow-right arrow"
+            ></i
+          ></a>
+
+          <!-- <router-link
+            :class="isScrolled(1900, 3900)"
+            :to="'/portfolio'"
+            class="about-content-text-button"
+          >
+            портфолио
+          </router-link> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="experience row">
+      <div
+        :class="isScrolled(2500, 4700)"
+        class="experience-left col-sm-8 col-12"
+      >
+        <div class="experience-left-card clients">
+          <span class="experience-left-card-num">50</span>
+          <br />
+          <div class="experience-left-card-text">
+            <span class="experience-left-card-text-line"></span>
+            <span class="experience-left-card-text-word">Клиентов</span>
+          </div>
+          <img src="@/assets/img/clients.png" alt="clients" />
+        </div>
+        <div class="experience-left-card projects">
+          <span class="experience-left-card-num">50+</span>
+          <br />
+          <div class="experience-left-card-text">
+            <span class="experience-left-card-text-line"></span>
+            <span class="experience-left-card-text-word"
+              >Проектов<br />
+              выполнено</span
+            >
+          </div>
+          <img src="@/assets/img/projects.png" alt="projects" />
+        </div>
+        <div class="experience-left-card awards">
+          <span class="experience-left-card-num">37</span>
+          <br />
+          <div class="experience-left-card-text">
+            <span class="experience-left-card-text-line"></span>
+            <span class="experience-left-card-text-word"
+              >Клиентов осталось у нас</span
+            >
+          </div>
+          <img src="@/assets/img/awards.png" alt="awards" />
+        </div>
+        <div class="experience-left-card years">
+          <span class="experience-left-card-num">18</span>
+          <br />
+          <div class="experience-left-card-text">
+            <span class="experience-left-card-text-line"></span>
+            <span class="experience-left-card-text-word">Лет на рынке</span>
+          </div>
+          <img src="@/assets/img/years.png" alt="years" />
+        </div>
+      </div>
+      <div class="experience-right col-sm-4 col-12">
+        <h1>
+          Более
+          <span :class="isScrolled(2500, 4300)" class="experience-right-pink"
+            >10 лет</span
+          >
+          работы
+        </h1>
+        <p>Опыт, проверенный временем и доверием наших клиентов.</p>
+        <!-- <router-link :to="'/contacts'" class="pinkButton">Оставить заявку</router-link> -->
+        <a :href="'/contacts'" class="pinkButton"> Оставить заявку →</a>
       </div>
     </div>
   </div>
@@ -445,7 +433,7 @@ export default {
   mounted() {
     const catalog = document.createElement("a");
     // Назначаем ему текст
-    catalog.textContent = "В каталог";
+    catalog.textContent = "В каталог →";
     // Устанавливаем путь маршрута
     const routePath = "/catalog";
     // Назначаем ему href атрибут для SEO и удобства навигации
@@ -509,7 +497,7 @@ h2 {
   width: 264px;
   padding: 16px;
   border: 0;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: $pink;
   font-size: 18px;
   color: white;
@@ -741,7 +729,7 @@ h2 {
 
 .choose {
   font-family: $unbounded-v;
-  margin-bottom: 202px;
+  margin-bottom: 30px;
 
   h2 {
     margin-bottom: 40px !important;

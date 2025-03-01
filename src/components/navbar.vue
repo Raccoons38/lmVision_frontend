@@ -5,7 +5,7 @@
         <div class="image"><img src="@/assets/img/logo.png" /></div>
         <div class="name">
           <p class="lm">LM</p>
-          <p class="vs">Video Solutions</p>
+          <p class="vs">Video</p>
         </div>
       </a>
       <button class="burger-menu" @click="toggleMenu">
@@ -36,7 +36,6 @@ export default {
   data() {
     return {
       pages: [
-        { name: "О нас", path: "about" },
         { name: "Каталог", path: "catalog" },
         { name: "Доставка|Оплата", path: "payment" },
         { name: "Контакты", path: "contacts" },

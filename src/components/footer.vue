@@ -33,11 +33,7 @@
         <div class="copyright">
           <p>Made by Raccoon IT Group &copy;</p>
           <!-- <p>Desined by Roman P</p> -->
-          <div class="designed">
-            Desined by Roman P
-            <br />
-            Programmed by Andrey O
-          </div>
+          <div class="designed">Desined by Roman P</div>
         </div>
       </div>
     </div>
