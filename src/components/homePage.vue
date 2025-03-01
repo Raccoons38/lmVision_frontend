@@ -1,5 +1,4 @@
 <template>
-  <div style="height: 80px"></div>
   <div class="container">
     <div class="mainBlock row">
       <div class="mainBlock-text col-md-6 col-12">
@@ -536,7 +535,7 @@ h2 {
 
 .mainBlock {
   display: flex;
-  margin-top: -120px;
+  margin-top: 90px !important;
   margin-bottom: 60px;
   font-family: $unbounded-v;
   height: 900px;
