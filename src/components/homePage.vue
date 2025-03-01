@@ -14,10 +14,10 @@
         <!-- <router-link :to="'/catalog'" class="pinkButton">Выбрать камеру</router-link> -->
         <a :href="'/catalog'" class="pinkButton"> В каталог →</a>
       </div>
+      <div class="col-md-6 titleImage">
+        <img src="@/assets/img/title_hero_image.png" alt="home page" />
+      </div>
     </div>
-  </div>
-  <div class="background">
-    <img src="@/assets/img/title_hero_image.png" alt="home page" />
   </div>
   <div class="container">
     <div class="reputation">
@@ -470,6 +470,14 @@ $secondary: rgba(56, 99, 165, 1);
 * {
   color: $mainText;
 }
+.titleImage {
+  height: 90%;
+  img {
+    height: 100%;
+    border-radius: 25px;
+  }
+}
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
