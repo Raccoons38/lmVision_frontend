@@ -5,7 +5,7 @@
         <h1>Доставка и Оплата<span class="pink point">.</span></h1>
       </div>
       <div class="head-text row">
-        <p class="col-sm-5 col-12">
+        <p class="col-sm-10 col-12">
           Быстрая и удобная доставка с гибкими вариантами оплаты
         </p>
       </div>
@@ -177,6 +177,16 @@ export default {
 
 $pink: rgba(232, 107, 117, 1);
 $mainText: rgba(66, 70, 73, 1);
+
+.head {
+  &-title {
+    font-size: 100px;
+    width: 60%;
+  }
+  &-text {
+    font-size: 30px;
+  }
+}
 
 .delivery {
   &-title {

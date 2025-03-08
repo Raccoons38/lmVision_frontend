@@ -506,7 +506,7 @@ h2 {
   border: 0;
   border-radius: 15px;
   background-color: $pink;
-  font-size: 18px;
+  font-size: 25px;
   color: white;
 }
 
@@ -547,13 +547,13 @@ h2 {
     padding-bottom: 170px;
     color: $mainText;
     h1 {
-      font-size: 64px;
+      font-size: 96px;
       span {
         color: $pink;
       }
     }
     p {
-      font-size: 18px;
+      font-size: 30px;
     }
   }
   &-mobileImg {
