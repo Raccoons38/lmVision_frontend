@@ -7,7 +7,10 @@
           <p class="lm">LM</p>
           <p class="vs">Video</p>
         </div>
+
+        
       </a>
+      <span>+7 (902)-510-87-30</span>
       <button class="burger-menu" @click="toggleMenu">
         <span :class="{ open: isMenuOpen }"></span>
         <span :class="{ open: isMenuOpen }"></span>

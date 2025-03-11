@@ -13,7 +13,7 @@
         <!-- <router-link :to="'/catalog'" class="pinkButton">Выбрать камеру</router-link> -->
         <a :href="'/catalog'" class="pinkButton"> В каталог →</a>
       </div>
-      <div class="col-md-6 titleImage">
+      <div class="col-md-6 titleImage d-none d-md-block">
         <img src="@/assets/img/title_hero_image.png" alt="home page" />
       </div>
     </div>
@@ -153,12 +153,12 @@
         <swiper
           :slidesPerView="1"
           :spaceBetween="30"
-          :pagination="pagination"
+          :pagination="paginationMobile"
           :modules="modules"
           class="mobileSlider"
         >
           <swiper-slide
-            v-for="(catalogItem, index) in filteredProducts.slice(0, 3)"
+            v-for="(catalogItem, index) in filteredProducts"
             :key="index"
           >
             <div class="catalog-slider-grid-item">
@@ -182,7 +182,7 @@
         <img
           src="@/assets/img/about_us.png"
           alt="we"
-          class="about-content-image"
+          class="about-content-image d-none d-md-block"
         />
         <div class="about-content-text">
           <h2 :class="isScrolled(1500, 3000)">
@@ -221,7 +221,7 @@
   <div class="container">
     <div class="experience row">
       <div
-        :class="isScrolled(2500, 4700)"
+        :class="isScrolled(2000, 4000)"
         class="experience-left col-sm-8 col-12"
       >
         <div class="experience-left-card clients">
@@ -269,8 +269,8 @@
       <div class="experience-right col-sm-4 col-12">
         <h1>
           Более
-          <span :class="isScrolled(2500, 4300)" class="experience-right-pink"
-            >10 лет</span
+          <span :class="isScrolled(2000, 3400)" class="experience-right-pink"
+            >18 лет</span
           >
           работы
         </h1>
@@ -365,6 +365,12 @@ export default {
         renderBullet: function (index, className) {
           return '<span class="' + className + '">' + (index + 1) + "</span>";
         },
+      },
+      paginationMobile: {
+        clickable: false,
+        renderBullet: function (index, className){
+          return '<span></span>'
+        }
       },
       modules: [Grid, Pagination],
     };
@@ -506,7 +512,7 @@ h2 {
   border: 0;
   border-radius: 15px;
   background-color: $pink;
-  font-size: 25px;
+  font-size: 20px;
   color: white;
 }
 
@@ -620,7 +626,7 @@ h2 {
 @media (max-width: 768px) {
   .mainBlock {
     margin-bottom: 40px;
-    padding-top: 250px;
+    padding-top: 30px;
     height: auto;
 
     &-text {
@@ -829,9 +835,9 @@ h2 {
     margin-bottom: 20px;
 
     &-image {
-      margin-top: -68px;
-      margin-bottom: 68px;
       margin-right: 155px;
+      padding: 10px;
+      height: 400px;
     }
     &-text {
       display: flex;
@@ -1137,6 +1143,10 @@ h2 {
         cursor: pointer;
         transition: all 0.5s ease-in-out;
 
+        & img {
+          object-fit: contain;
+        }
+
         &:hover {
           border: 1px solid $pink;
           color: $pink;
@@ -1174,8 +1184,9 @@ h2 {
         text-align: left;
 
         & img {
-          width: 100%;
-          height: auto;
+          width: 400px;
+          aspect-ratio: 3/2;
+          object-fit: contain;
         }
         & h3 {
           margin: 0;
@@ -1225,6 +1236,10 @@ h2 {
       &-grid {
         &-item {
           height: 530px;
+
+          & img {
+            object-fit: contain;
+          }
         }
       }
     }

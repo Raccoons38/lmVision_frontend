@@ -9,11 +9,15 @@
   <div class="container">
     <div class="questions row">
       <div class="questions-left col-sm-8 col-12">
-        <h2>Мы всегда рады вашим вопросам и предложениям<span class="pink">!</span></h2>
+        <h2>
+          Мы всегда рады вашим вопросам и предложениям<span class="pink"
+            >!</span
+          >
+        </h2>
         <p>
-          Если у вас возникли какие-либо вопросы, требуется дополнительная информация или
-          вы хотите обсудить сотрудничество, пожалуйста, свяжитесь с нами любым удобным
-          для вас способом.
+          Если у вас возникли какие-либо вопросы, требуется дополнительная
+          информация или вы хотите обсудить сотрудничество, пожалуйста,
+          свяжитесь с нами любым удобным для вас способом.
         </p>
       </div>
       <div class="questions-right col-sm-4">
@@ -22,7 +26,7 @@
     </div>
   </div>
   <customForm></customForm>
-  <div class="container">
+  <div class="container d-none">
     <div class="place row">
       <div class="place-map col-sm-8 col-12">
         <iframe

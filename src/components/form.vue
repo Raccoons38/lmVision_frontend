@@ -12,7 +12,7 @@
         <div class="form-left-contacts">
           <h2>Наши контакты</h2>
           <p>
-            Тел: +7902-510-87-30 <br />
+            Тел: +7 (902)-510-87-30 <br />
             60-87-30 <br />
             <br />
             Email: lm-video@mail.ru

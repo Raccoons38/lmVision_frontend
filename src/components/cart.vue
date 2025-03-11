@@ -3,7 +3,11 @@
     <!-- Левая часть с прокручиваемым списком товаров -->
     <div class="cart-items">
       <div v-for="item in items" :key="item.id" class="cart-item">
-        <img :src="getImageUrl(item.imageUrl)" :alt="item.name" class="item-image" />
+        <img
+          :src="getImageUrl(item.imgURL)"
+          :alt="item.name"
+          class="item-image"
+        />
         <div class="item-details">
           <h3 class="item-name">{{ item.name }}</h3>
           <p class="item-description">{{ item.description }}</p>
@@ -21,7 +25,9 @@
             >
               +
             </button>
-            <button @click="deleteItem(item)" class="delete-button">удалить</button>
+            <button @click="deleteItem(item)" class="delete-button">
+              удалить
+            </button>
           </div>
         </div>
         <div class="item-sum">
@@ -40,12 +46,11 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
     return {
-      items: [],
+      items: []
     };
   },
   computed: {
@@ -53,7 +58,10 @@ export default {
       return this.items.reduce((total, item) => total + item.quantity, 0);
     },
     totalPrice() {
-      return this.items.reduce((total, item) => total + item.price * item.quantity, 0);
+      return this.items.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
     },
   },
   methods: {
@@ -90,21 +98,29 @@ export default {
       }
     },
     getImageUrl(imageName) {
-      return require(`@/assets/img/${imageName}`);
+      if (imageName) {
+        return require(`@/assets/img/products/${imageName}`);
+      } else {
+        return require(`@/assets/img/products/0_0.png`);
+      }
     },
     saveItemsToLocalStorage() {
       localStorage.setItem("cartItems", JSON.stringify(this.items));
     },
     loadItemsFromLocalStorage() {
       const savedItems = localStorage.getItem("cartItems");
-      if (savedItems) {
-        this.items = JSON.parse(savedItems);
+      this.items = JSON.parse(savedItems);
+      for (let i = 0; i < this.items.length; i++) {
+        this.items[i].quantity = 1;
       }
     },
+  },
+  beforeCreate(){
   },
   mounted() {
     this.loadItemsFromLocalStorage();
   },
+
 };
 </script>
 

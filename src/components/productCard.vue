@@ -110,7 +110,7 @@ export default {
   & img {
     width: 292px;
     height: 195px;
-    object-fit: cover;
+    object-fit: contain;
 
     border-radius: 4px;
   }

@@ -18,8 +18,8 @@
           </ul>
           <ul>
             <p>Соцсети<span class="pink">.</span></p>
-            <li><a href="#">Telegram</a></li>
-            <li><a href="#">Whatsapp</a></li>
+            <li><a href="tg://user?id=848007290">Telegram</a></li>
+            <li><a href="https://wa.link/mkt2kk">Whatsapp</a></li>
           </ul>
           <ul>
             <p>Информация<span class="pink">.</span></p>

@@ -366,6 +366,15 @@ $mainText: rgba(66, 70, 73, 1);
 }
 
 @media (max-width: 768px) {
+  .head{
+    &-title {
+      font-size: 50px;
+      width: 100%;
+    }
+    &-text {
+      font-size: 20px;
+    }
+  }
   .delivery {
     &-variants {
       margin-bottom: 50px;

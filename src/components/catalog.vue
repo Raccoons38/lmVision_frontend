@@ -167,7 +167,7 @@ $mainText: rgba(33, 37, 41, 1);
 .sideMenu {
   background-color: $mainText;
   color: white;
-  padding: 100px 40px !important;
+  padding: 100px 20px 0 20px !important;
 
   &-search {
     background-color: rgba(196, 196, 196, 0.5);
@@ -183,7 +183,7 @@ $mainText: rgba(33, 37, 41, 1);
     }
 
     & input {
-      width: 70%;
+      width: 100%;
       background: transparent;
       border: none;
       font-size: 20px;
