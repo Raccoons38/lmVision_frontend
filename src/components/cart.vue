@@ -202,4 +202,28 @@ export default {
     padding-left: 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .cart {
+    flex-direction: column;
+    &-items {
+      width: 100%;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      padding-right: 20px;
+      border-right: 1px solid #ccc;
+    }
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    &-summary {
+      width: 100%;
+      padding-left: 20px;
+      margin-bottom: 20px;
+    } 
+  }
+}
 </style>

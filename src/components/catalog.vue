@@ -35,6 +35,14 @@
       >
         <img src="@/assets/img/lucide-lab_intercom.png" alt="" />Видеодомофоны
       </div>
+      <div
+        class="sideMenu-link"
+        id="wifiCameras"
+        :class="{ activeFilter: filter === 'wifi' }"
+        @click="filterProducts('wifi')"
+      >
+        <img src="@/assets/img/wifi_icon.png" alt="" /> WiFi камеры
+      </div>
 
       <a href="/contacts"
         ><div class="sideMenu-link" id="contacts">

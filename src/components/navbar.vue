@@ -10,7 +10,14 @@
 
         
       </a>
-      <span>+7 (902)-510-87-30</span>
+      <span class="d-none d-sm-block">
+        <span style="margin-right: 10px;">+7 (902)-510-87-30</span>
+        <span>60-87-30</span>
+      </span>
+      <span class="d-sm-none d-flex flex-column" style="font-size: 12px;">
+        <span>+7 (902)-510-87-30</span>
+        <span>60-87-30</span>
+      </span>
       <button class="burger-menu" @click="toggleMenu">
         <span :class="{ open: isMenuOpen }"></span>
         <span :class="{ open: isMenuOpen }"></span>
