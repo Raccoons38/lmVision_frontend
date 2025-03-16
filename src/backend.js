@@ -70,6 +70,20 @@ function get_message(message) {
   return message ? `<br>${message}<br>` : `Сообщений не оставлено<br>`;
 }
 
+function get_items(items) {
+  var result = '';
+  if (!result) {
+    return '';
+  }
+  var total = 0;
+  items.forEach((item, index) => {
+    result += `${index + 1}. ${item.name} - ${item.price} ₽\n`
+    total += item.price;
+  })
+  result += `Общая сумма: ${total}₽.\n`
+  return result
+}
+
 async function send_mail(data) {
   const info = await mailer.sendMail({
 	from: {
@@ -83,9 +97,29 @@ async function send_mail(data) {
       get_email(data.email) +
       get_address(data.address) +
       get_phone(data.phone) +
-      get_message(data.message), // html body
+      get_message(data.message) // html body
   });
 }
+
+
+async function send_order(data){
+  const info = await mailer.sendMail({
+    from: {
+      name: "LM Video",
+      address: "contact@irkcam.ru"
+      }, // sender address
+      to: "aleks.nekipelov78@gmail.com", // list of receivers
+      subject: `Новый заказ: ${data.email}`, // Subject line
+      html:
+        get_name(data.name) +
+        get_email(data.email) +
+        get_address(data.address) +
+        get_phone(data.phone) +
+        get_message(data.message) +
+        get_items(items), // html body
+    });
+}
+
 
 app.get("/products", (req, res) => {
   res.json(products);
@@ -100,6 +134,12 @@ app.post("/send_mail", (req, res) => {
   console.log(req.body.data);
   send_mail(req.body.data);
 });
+
+app.post("/send_order", (req, res) => {
+  console.log("sending mail");
+  console.log(req.body.data);
+  send_order(req.body.data);
+})
 
 var httpsServer = https.createServer(credentials, app);
 
