@@ -72,9 +72,10 @@ function get_message(message) {
 
 function get_items(items) {
   var result = '';
-  if (!result) {
+  if (!items) {
     return '';
   }
+  result += '<b>Товары:</b>\n\n'
   var total = 0;
   items.forEach((item, index) => {
     result += `${index + 1}. ${item.name} - ${item.price} ₽\n`
