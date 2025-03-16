@@ -50,7 +50,27 @@
         </div></a
       >
     </div>
+    
     <div class="catalog col-sm-10">
+      <div class="topMenu d-sm-none">
+        <div class="topMenu-filterContainer">
+          <span class="topMenu-filter" :class="{ activeFilter: filter === 'ip' }" @click="filterProducts('ip')">IP</span>
+          <span class="topMenu-filter" :class="{ activeFilter: filter === 'fullcolor' }" @click="filterProducts('fullcolor')">Full color</span>
+          <span class="topMenu-filter" :class="{ activeFilter: filter === 'intercom' }" @click="filterProducts('intercom')">Видеодомофоны</span>
+          <span class="topMenu-filter" :class="{ activeFilter: filter === 'wifi' }" @click="filterProducts('wifi')">WiFi</span>
+          <a class="topMenu-cart" href="/cart"><img src="@/assets/img/cart.svg" alt=""></a>
+        </div>
+        <div class="sideMenu-search">
+          <img src="@/assets/img/search.svg" alt="" />
+          <input
+            type="text"
+            placeholder="Поиск"
+            @input="search($event.target.value)"
+          />
+        </div>
+        
+        
+      </div>
       <div class="catalog-grid">
         <ProductCard
           v-for="product in filteredProducts"
@@ -137,7 +157,8 @@ export default {
         this.filteredProducts = this.products;
       }
       this.filteredProducts = this.filteredProducts.filter((product) => {
-        return product.name.includes(searchString);
+        var lowerCaseName = product.name.toLowerCase();
+        return lowerCaseName.includes(searchString.toLowerCase());
       });
     },
     filterProducts(filter) {
@@ -170,6 +191,51 @@ $mainText: rgba(33, 37, 41, 1);
 
 .catalogContainer {
   max-width: 100%;
+}
+
+.topMenu{
+  padding-top: 5px;
+  padding-bottom: 10px;
+  background-color: black;
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 30px;
+  width: 100vw;
+
+  &-filterContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    align-items: baseline;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    
+  }
+  &-filter {
+    z-index: 100%;
+    cursor: pointer;
+    color: white;
+    font-size: 11px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-inline: 5px;
+    padding-block: 2px;
+    border-radius: 4px;
+  }
+  & .activeFilter {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  &-cart {
+    position: absolute;
+    right: 20px;
+    top: -8px;
+    img{
+      width: 20px;
+      height: 20px;
+    }
+  }
 }
 
 .sideMenu {
@@ -254,7 +320,47 @@ $mainText: rgba(33, 37, 41, 1);
 @media (max-width: 768px) {
   .sideMenu {
     display: none;
+    &-search {
+    background-color: rgba(196, 196, 196, 0.5);
+    border-radius: 12px;
+    padding: 10px;
+    padding-left: 15px;
+    margin-inline: 10px;
+    display: flex;
+    align-items: flex-end;
+
+    & img {
+      margin-right: 20px;
+      margin-bottom: 0;
+      width: 15px;
+      height: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      font-size: 10px;
+      font-weight: 300;
+      color: white;
+
+      &::placeholder {
+        color: white;
+      }
+
+      &:focus {
+        background: transparent;
+        border: none;
+        outline: none !important;
+      }
+    }
   }
+
+}
 }
 
 .catalog {
