@@ -75,13 +75,13 @@ function get_items(items) {
   if (!items) {
     return '';
   }
-  result += '<b>Товары:</b>\n\n'
+  result += '<b>Товары:</b><br><br>'
   var total = 0;
   items.forEach((item, index) => {
-    result += `${index + 1}. ${item.name} - ${item.price} ₽\n`
+    result += `${index + 1}. ${item.name} - ${item.price} ₽<br>`
     total += item.price;
   })
-  result += `Общая сумма: ${total}₽.\n`
+  result += `Общая сумма: ${total}₽.<br>`
   return result
 }
 
