@@ -116,7 +116,7 @@ async function send_order(data){
         get_address(data.address) +
         get_phone(data.phone) +
         get_message(data.message) +
-        get_items(items), // html body
+        get_items(data.items), // html body
     });
 }
 

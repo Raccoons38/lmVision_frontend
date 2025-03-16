@@ -112,7 +112,6 @@ export default {
       this.personalDataHandlingAgreement = !this.personalDataHandlingAgreement;
     },
     submit(values) {
-      console.log(this.items);
       if (!this.personalDataHandlingAgreement) {
         this.personalDataInvalid = true;
         return;
