@@ -91,7 +91,7 @@ async function send_mail(data) {
 		name: "LM Video",
 		address: "contact@irkcam.ru"
 	  }, // sender address
-    to: "aleks.nekipelov78@gmail.com", // list of receivers
+    to: "lm-video@mail.ru", // list of receivers
     subject: `Новая заявка: ${data.email}`, // Subject line
     html:
       get_name(data.name) +
@@ -109,15 +109,15 @@ async function send_order(data){
       name: "LM Video",
       address: "contact@irkcam.ru"
       }, // sender address
-      to: "aleks.nekipelov78@gmail.com", // list of receivers
+      to: "lm-video@mail.ru", // list of receivers
       subject: `Новый заказ: ${data.email}`, // Subject line
       html:
         get_name(data.name) +
         get_email(data.email) +
         get_address(data.address) +
         get_phone(data.phone) +
-        get_message(data.message) +
-        get_items(data.items), // html body
+        get_items(data.items) +
+        get_message(data.message) , // html body
     });
 }
 
