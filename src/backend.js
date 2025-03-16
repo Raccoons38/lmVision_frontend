@@ -34,16 +34,16 @@ const cors_options = {
 
 const nodemailer = require("nodemailer");
 const mailer = nodemailer.createTransport({
-  host: "smtp.mailersend.net",
-  port: 587,
+  host: "connect.smtp.bz",
+  port: 2525,
   secure: false, // upgrade later with STARTTLS
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASSWORD,
+    user: 'aleks.nekipelov78@gmail.com',
+    pass: 'wtwCoE0uyMtT',
   },
   tls: {
     // do not fail on invalid certs
-    rejectUnauthorized: false,
+    rejectUnauthorized: true,
   },
 });
 
@@ -72,8 +72,11 @@ function get_message(message) {
 
 async function send_mail(data) {
   const info = await mailer.sendMail({
-    from: `LM Cameras ${process.env.SMTP_USER}`, // sender address
-    to: "lm-video@mail.ru", // list of receivers
+	from: {
+		name: "LM Video",
+		address: "contact@irkcam.ru"
+	  }, // sender address
+    to: "aleks.nekipelov78@gmail.com", // list of receivers
     subject: `Новая заявка: ${data.email}`, // Subject line
     html:
       get_name(data.name) +
