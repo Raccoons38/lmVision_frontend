@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <tetikus showDefaultCursor="true"/>
     <div class="main">
       <navbar />
       <router-view />
